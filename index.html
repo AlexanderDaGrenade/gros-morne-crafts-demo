@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gros Morne Crafts — Handmade in Newfoundland since 1971</title>
+<meta name="description" content="Gros Morne Crafts in Rocky Harbour, NL. The biggest and best selection of quality handmade Newfoundland products since 1971, plus our private Oceanside Cottage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sea:#12304a; --sea-deep:#0a1b2b; --fog:#eef1ef; --paper:#faf7f1;
+    --ink:#1b2430; --muted:#5b6672; --red:#d23b2f; --red-dark:#a92b22;
+    --gold:#f0b440; --line:#ddd6c8; --radius:18px; --max:1240px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  html,body{overflow-x:clip}
+  body{font-family:"Work Sans",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.05;letter-spacing:-.015em}
+  em{font-style:italic;font-weight:500}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .eyebrow{display:inline-flex;align-items:center;gap:.7em;font-size:.76rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+  .eyebrow::before{content:"";width:28px;height:2px;background:currentColor}
+  .btn{display:inline-flex;align-items:center;gap:.55em;padding:1em 1.7em;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;transition:transform .25s,background .25s,color .25s,box-shadow .25s}
+  .btn:hover{transform:translateY(-3px)}
+  .btn-red{background:var(--red);color:#fff;box-shadow:0 10px 30px rgba(210,59,47,.35)}
+  .btn-red:hover{background:var(--red-dark)}
+  .btn-ghost{border:1.5px solid rgba(255,255,255,.7);color:#fff;backdrop-filter:blur(6px);background:rgba(255,255,255,.08)}
+  .btn-ghost:hover{background:#fff;color:var(--sea)}
+  .btn-dark{background:var(--sea);color:#fff}
+  .btn-dark:hover{background:var(--sea-deep)}
+
+  /* NAV */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .35s,box-shadow .35s}
+  header.scrolled{background:rgba(250,247,241,.94);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+  .brand{display:flex;align-items:center;text-decoration:none}
+  .brand img{height:46px;width:auto;border-radius:8px;background:#fff;padding:3px 8px;box-shadow:0 4px 16px rgba(0,0,0,.15)}
+  .nav-links{display:flex;gap:2rem;align-items:center;list-style:none}
+  .nav-links a{white-space:nowrap;color:#fff;text-decoration:none;font-size:.92rem;font-weight:500;transition:color .3s}
+  header.scrolled .nav-links a{color:var(--ink)}
+  .nav-links a:hover{color:var(--gold)!important}
+  .nav-links .btn{color:#fff!important;padding:.7em 1.3em}
+  .menu-toggle{display:none;background:none;border:0;color:#fff;cursor:pointer}
+  header.scrolled .menu-toggle{color:var(--ink)}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;min-height:100svh;color:#fff;display:flex;align-items:flex-end;overflow:hidden;background:var(--sea-deep)}
+  .hero-bg{position:absolute;inset:0;background:url(images/gros-morne-reflection.jpg) center/cover;animation:kenburns 26s ease-in-out infinite alternate}
+  @keyframes kenburns{from{transform:scale(1.05)}to{transform:scale(1.18) translate(-2%,-1%)}}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,27,43,.55) 0%,rgba(10,27,43,.1) 30%,rgba(10,27,43,.4) 55%,rgba(10,27,43,.9) 100%)}
+  .hero-content{position:relative;z-index:2;padding-top:140px;padding-bottom:110px;width:100%}
+  .hero .eyebrow{color:var(--gold);background:rgba(10,27,43,.55);padding:.5em 1em;border-radius:999px;backdrop-filter:blur(6px)}
+  .hero h1{font-size:clamp(3rem,8.5vw,7.4rem);font-weight:800;margin:1rem 0 1.4rem;max-width:12ch;text-shadow:0 4px 40px rgba(0,0,0,.35)}
+  .hero h1 em{color:var(--gold)}
+  .hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap}
+  .hero p{font-size:1.18rem;max-width:520px;opacity:.95}
+  .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+  .hero-badge{width:150px;height:150px;flex:none;animation:spin 28s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .scroll-cue{position:absolute;left:50%;bottom:26px;z-index:3;width:24px;height:40px;border:2px solid rgba(255,255,255,.7);border-radius:14px;transform:translateX(-50%)}
+  .scroll-cue::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;border-radius:2px;background:#fff;transform:translateX(-50%);animation:cue 1.8s infinite}
+  @keyframes cue{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}100%{opacity:0;transform:translate(-50%,14px)}}
+
+  /* MARQUEE */
+  .marquee{background:var(--red);color:#fff;overflow:hidden;white-space:nowrap;padding:1.05rem 0}
+  .marquee-track{display:inline-flex;gap:3rem;animation:marquee 40s linear infinite;font-family:"Fraunces",serif;font-size:1.35rem;font-style:italic}
+  .marquee-track span{display:inline-flex;align-items:center;gap:3rem}
+  .marquee-track span::after{content:"✦";font-style:normal;color:var(--gold);font-size:1rem}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+
+  section{padding:120px 0}
+  .section-head{max-width:680px;margin-bottom:3.5rem}
+  .section-head h2{font-size:clamp(2.2rem,4.8vw,3.8rem);margin:1rem 0 1.1rem}
+  .section-head p{color:var(--muted);font-size:1.1rem}
+
+  /* STORY */
+  .story-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:5.5rem;align-items:center}
+  .story-photos{position:relative;padding-bottom:12%}
+  .story-photos .main{border-radius:var(--radius);width:100%;aspect-ratio:4/3.4;object-fit:cover;box-shadow:0 30px 70px rgba(18,48,74,.2)}
+  .story-photos .inset{position:absolute;width:44%;right:-6%;bottom:0;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius);border:8px solid var(--paper);box-shadow:0 24px 60px rgba(0,0,0,.25)}
+  .story-photos .stamp{position:absolute;left:-22px;top:-22px;width:118px;height:118px;border-radius:50%;background:var(--gold);color:var(--sea-deep);display:grid;place-items:center;text-align:center;font-family:"Fraunces",serif;font-weight:800;font-size:1.9rem;line-height:.9;box-shadow:0 12px 30px rgba(0,0,0,.2);transform:rotate(-10deg)}
+  .story-photos .stamp small{display:block;font-family:"Work Sans";font-size:.62rem;font-weight:600;letter-spacing:.18em;margin-top:.35rem}
+  .story-text h2{font-size:clamp(2.2rem,4.4vw,3.4rem);margin:1rem 0 1.5rem}
+  .story-text p{color:var(--muted);margin-bottom:1.1rem}
+  .story-text blockquote{font-family:"Fraunces",serif;font-style:italic;font-size:1.45rem;line-height:1.4;color:var(--sea);border-left:3px solid var(--red);padding-left:1.3rem;margin:2.2rem 0}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.2rem;padding-top:2rem;border-top:1px solid var(--line)}
+  .stats strong{display:block;font-family:"Fraunces",serif;font-size:2.4rem;font-weight:800;color:var(--red);line-height:1}
+  .stats span{font-size:.85rem;color:var(--muted)}
+
+  /* CRAFTS */
+  .crafts{background:var(--sea-deep);color:#fff}
+  .crafts .section-head p{color:rgba(255,255,255,.72)}
+  .crafts .eyebrow{color:var(--gold)}
+  .craft-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:300px 300px;gap:1.2rem}
+  .craft{position:relative;border-radius:var(--radius);overflow:hidden}
+  .craft img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+  .craft:hover img{transform:scale(1.07)}
+  .craft::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(10,27,43,.88))}
+  .craft figcaption{position:absolute;left:1.4rem;right:1.4rem;bottom:1.3rem;z-index:2}
+  .craft h3{font-size:1.5rem;margin-bottom:.25rem}
+  .craft p{font-size:.9rem;opacity:.8}
+  .craft.big{grid-row:span 2}
+  .craft.big h3{font-size:2rem}
+  .promise{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin-top:4.5rem}
+  .promise div{border-top:1px solid rgba(255,255,255,.18);padding-top:1.6rem}
+  .promise b{font-family:"Fraunces",serif;font-size:1.35rem;font-weight:600;display:block;margin-bottom:.4rem;color:var(--gold)}
+  .promise p{color:rgba(255,255,255,.72);font-size:.95rem}
+
+  /* SUNSET BAND */
+  .band{position:relative;min-height:80vh;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;padding:120px 0}
+  .band-bg{position:absolute;inset:-15% 0;background:url(images/sunset-harbour.jpg) center/cover;will-change:transform}
+  .band::after{content:"";position:absolute;inset:0;background:rgba(10,27,43,.35)}
+  .band .wrap{position:relative;z-index:2}
+  .band h2{font-size:clamp(2.4rem,6.5vw,5.6rem);font-weight:800;max-width:14ch;margin:0 auto;text-shadow:0 6px 40px rgba(0,0,0,.35)}
+  .band h2 em{color:var(--gold)}
+  .band p{margin-top:1.4rem;font-size:1.15rem;opacity:.92}
+
+  /* COTTAGE */
+  .cottage-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:5rem;align-items:center}
+  .cottage-text h2{font-size:clamp(2.2rem,4.6vw,3.6rem);margin:1rem 0 1.3rem}
+  .cottage-text > p{color:var(--muted);margin-bottom:1.6rem}
+  .amenities{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 1.6rem;margin:2rem 0 2.6rem;list-style:none}
+  .amenities li{display:flex;gap:.8rem;align-items:flex-start;font-size:.96rem}
+  .amenities svg{flex:none;color:var(--red);margin-top:3px}
+  .mosaic{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:200px 170px 200px;gap:.8rem}
+  .mosaic img{width:100%;height:100%;object-fit:cover;border-radius:14px;transition:transform .5s}
+  .mosaic img:hover{transform:scale(1.03)}
+  .m1{grid-column:1/5;grid-row:1/3}
+  .m2{grid-column:5/7;grid-row:1/2}
+  .m3{grid-column:5/7;grid-row:2/4}
+  .m4{grid-column:1/3;grid-row:3/4}
+  .m5{grid-column:3/5;grid-row:3/4}
+  .price-tag{display:inline-flex;align-items:center;gap:.6rem;background:var(--fog);border-radius:999px;padding:.5em 1.1em .5em .6em;font-size:.85rem;font-weight:500;margin-bottom:1.6rem}
+  .price-tag i{width:10px;height:10px;border-radius:50%;background:#2fa36b;box-shadow:0 0 0 4px rgba(47,163,107,.2)}
+
+  /* GALLERY */
+  .gallery{background:var(--fog);padding-bottom:100px}
+  .g-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2.5rem}
+  .g-head .section-head{margin-bottom:0}
+  .g-arrows{display:flex;gap:.6rem}
+  .g-arrows button{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--sea);background:transparent;color:var(--sea);cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s}
+  .g-arrows button:hover{background:var(--sea);color:#fff}
+  .g-rail{display:flex;gap:1.1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 max(24px,calc((100vw - var(--max))/2 + 24px)) 1rem;scrollbar-width:none}
+  .g-rail::-webkit-scrollbar{display:none}
+  .g-rail figure{flex:none;scroll-snap-align:start;position:relative;border-radius:var(--radius);overflow:hidden;height:440px}
+  .g-rail figure.p{width:330px}
+  .g-rail figure.l{width:580px}
+  .g-rail img{width:100%;height:100%;object-fit:cover}
+  .g-rail figcaption{position:absolute;left:1rem;bottom:1rem;background:rgba(255,255,255,.92);color:var(--ink);font-size:.8rem;font-weight:600;padding:.4em .9em;border-radius:999px}
+
+  /* REVIEWS */
+  .reviews{text-align:center}
+  .reviews .section-head{margin:0 auto 2.5rem}
+  .review-card{max-width:820px;margin:0 auto;background:#fff;border-radius:24px;padding:3.2rem;box-shadow:0 30px 80px rgba(18,48,74,.1);position:relative}
+  .review-card::before{content:"“";position:absolute;top:-38px;left:50%;transform:translateX(-50%);width:76px;height:76px;border-radius:50%;background:var(--red);color:#fff;font-family:"Fraunces",serif;font-size:4rem;line-height:1.15}
+  .stars{color:var(--gold);font-size:1.5rem;letter-spacing:.2em;margin-top:.6rem}
+  .review-card p{font-family:"Fraunces",serif;font-size:1.45rem;line-height:1.45;margin:1.2rem 0 1.4rem;color:var(--sea)}
+  .review-card .who{color:var(--muted);font-size:.9rem;margin-bottom:1.8rem}
+
+  /* VISIT */
+  .visit{background:var(--sea-deep);color:#fff;padding:0}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr}
+  .visit-info{padding:110px max(24px,calc((100vw - var(--max))/2 + 24px));padding-right:4rem}
+  .visit-info .eyebrow{color:var(--gold)}
+  .visit-info h2{font-size:clamp(2.2rem,4.4vw,3.4rem);margin:1rem 0 1.4rem}
+  .visit-info > p{color:rgba(255,255,255,.75);margin-bottom:2.2rem}
+  .info-row{display:flex;gap:1.1rem;padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,.14)}
+  .info-row:first-of-type{border-top:1px solid rgba(255,255,255,.14)}
+  .info-row svg{flex:none;color:var(--gold);margin-top:3px}
+  .info-row h3{font-family:"Work Sans";font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.25rem}
+  .info-row a{text-decoration:none;font-weight:500}
+  .info-row a:hover{color:var(--gold)}
+  .hours{display:grid;grid-template-columns:auto auto;gap:.15rem 1.5rem}
+  .visit-media{position:relative;min-height:620px}
+  .visit-media > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .map-card{position:absolute;left:2rem;right:2rem;bottom:2rem;height:260px;border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.4);border:6px solid #fff}
+  .map-card iframe{width:100%;height:100%;border:0}
+
+  /* FOOTER */
+  footer{background:#071420;color:rgba(255,255,255,.7);padding:70px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem}
+  footer .brand img{height:56px;margin-bottom:1.2rem}
+  footer h4{color:#fff;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
+  footer ul{list-style:none}
+  footer li{margin-bottom:.55rem;font-size:.92rem}
+  footer a{text-decoration:none}
+  footer a:hover{color:var(--gold)}
+  .foot-bottom{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:.82rem;flex-wrap:wrap;gap:1rem}
+
+  /* mobile call bar */
+  .callbar{display:none}
+
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:980px){
+    .story-grid,.cottage-grid{grid-template-columns:1fr;gap:3.5rem}
+    .story-photos{margin:0 6% 0 4%}
+    .craft-grid{grid-template-columns:1fr 1fr;grid-template-rows:380px 260px 260px}
+    .craft.big{grid-column:span 2;grid-row:auto}
+    .promise{grid-template-columns:1fr;gap:1.2rem}
+    .visit-grid{grid-template-columns:1fr}
+    .visit-info{padding:90px 24px}
+    .visit-media{min-height:520px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .hero-badge{width:110px;height:110px}
+  }
+  @media (max-width:900px){
+    .menu-toggle{display:block}
+    .nav-links{position:fixed;inset:70px 0 auto 0;flex-direction:column;background:var(--paper);padding:1.6rem 16px 2rem;gap:1.2rem;transform:translateY(-130%);transition:transform .35s;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+    .nav-links.open{transform:none}
+    .nav-links a{color:var(--ink)!important}
+    .nav{height:70px}
+  }
+  @media (max-width:760px){
+    body{font-size:16px}
+    .wrap{padding:0 16px}
+    section{padding:84px 0}
+    .menu-toggle{display:block}
+    .nav{height:70px}
+    .brand img{height:40px}
+    .nav-links{position:fixed;inset:70px 0 auto 0;flex-direction:column;background:var(--paper);padding:1.6rem 16px 2rem;gap:1.2rem;transform:translateY(-130%);transition:transform .35s;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+    .nav-links.open{transform:none}
+    .nav-links a{color:var(--ink)!important}
+    .hero-content{padding-top:120px;padding-bottom:90px}
+    .hero-badge{display:none}
+    .hero .btn{flex:1 1 100%;justify-content:center}
+    .story-photos .stamp{width:92px;height:92px;font-size:1.5rem;left:-10px;top:-14px}
+    .stats strong{font-size:1.9rem}
+    .craft-grid{grid-template-columns:1fr;grid-template-rows:none;grid-auto-rows:280px}
+    .craft.big{grid-column:auto}
+    .mosaic{grid-template-rows:150px 120px 150px;gap:.5rem}
+    .amenities{grid-template-columns:1fr}
+    .g-rail{padding:0 16px 1rem}
+    .g-rail figure{height:340px}
+    .g-rail figure.p{width:250px}
+    .g-rail figure.l{width:300px}
+    .g-arrows{display:none}
+    .review-card{padding:3rem 1.4rem 2rem}
+    .review-card p{font-size:1.15rem}
+    .visit-info{padding:84px 16px}
+    .map-card{left:1rem;right:1rem;bottom:1rem}
+    .foot-grid{grid-template-columns:1fr}
+    footer{padding-bottom:110px}
+    .callbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;gap:.6rem}
+    .callbar a{flex:1;justify-content:center;padding:.95em 1em}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Gros Morne Crafts home"><img src="images/logo.jpg" alt="Gros Morne Crafts, Newfoundland's Finest Since 1971"></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#crafts">The Crafts</a></li>
+      <li><a href="#cottage">Oceanside Cottage</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#visit" class="btn btn-red">Plan a Visit</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="padding:0">
+  <div class="hero-bg" role="img" aria-label="Gros Morne mountain reflected in still water"></div>
+  <div class="wrap hero-content">
+    <span class="eyebrow">Rocky Harbour · Gros Morne National Park</span>
+    <h1>Handmade in Newfoundland, <em>since 1971.</em></h1>
+    <div class="hero-row">
+      <div>
+        <p>The biggest and best selection of quality handmade Newfoundland products, all under one roof on Main Street.</p>
+        <div class="hero-ctas">
+          <a href="#crafts" class="btn btn-red">Explore the Crafts
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#cottage" class="btn btn-ghost">Stay at the Cottage</a>
+        </div>
+      </div>
+      <svg class="hero-badge" viewBox="0 0 160 160" aria-hidden="true">
+        <defs><path id="circ" d="M80,80 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>
+        <circle cx="80" cy="80" r="78" fill="#d23b2f"/>
+        <text font-family="Work Sans" font-size="12.5" font-weight="600" letter-spacing="3.2" fill="#fff"><textPath href="#circ">100% HANDMADE · LOCALLY MADE · SINCE 1971 ·</textPath></text>
+        <text x="80" y="93" text-anchor="middle" font-family="Fraunces" font-size="36" font-weight="800" fill="#f0b440">NL</text>
+      </svg>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Handmade Newfoundland crafts</span><span>Carved dories &amp; lighthouses</span><span>Model fishing boats</span><span>Family-run since 1971</span><span>Private Oceanside Cottage</span><span>Made by local Newfoundlanders</span>
+    <span>Handmade Newfoundland crafts</span><span>Carved dories &amp; lighthouses</span><span>Model fishing boats</span><span>Family-run since 1971</span><span>Private Oceanside Cottage</span><span>Made by local Newfoundlanders</span>
+  </div>
+</div>
+
+<!-- STORY -->
+<section id="story">
+  <div class="wrap story-grid">
+    <div class="story-photos reveal">
+      <img class="main" src="images/storefront.jpg" alt="The Gros Morne Crafts shop front with model boats and a lighthouse" loading="lazy">
+      <img class="inset" src="images/music-in-shop.jpg" alt="Music and good company inside the shop" loading="lazy">
+      <div class="stamp">1971<small>EST.</small></div>
+    </div>
+    <div class="story-text reveal">
+      <span class="eyebrow">Our Story</span>
+      <h2>Two generations of <em>Newfoundland craft</em>, under one roof.</h2>
+      <p>When our parents opened the doors in 1971, Gros Morne Crafts was the only craft shop on the Northern Peninsula, and one of the first in all of Newfoundland.</p>
+      <p>Over the decades we've built relationships with makers right across the island. That's why today we carry the biggest and best selection of quality handmade Newfoundland products in Gros Morne National Park, at the best prices.</p>
+      <blockquote>“Quality, unique products you can only find right here. Nowhere else in Newfoundland.”</blockquote>
+      <div class="stats">
+        <div><strong>55+</strong><span>years on Main Street</span></div>
+        <div><strong>100%</strong><span>handmade in NL</span></div>
+        <div><strong>1st</strong><span>craft shop on the Northern Peninsula</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRAFTS -->
+<section id="crafts" class="crafts">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Crafts</span>
+      <h2>Made by local <em>Newfoundlanders.</em></h2>
+      <p>Carved, built and painted by hand by makers from around the island. Every piece carries a bit of the outports home with you.</p>
+    </div>
+    <div class="craft-grid">
+      <figure class="craft big reveal">
+        <img src="images/dory-carvings.jpg" alt="Hand-built dory with carved fishermen and lobster pots on the beach" loading="lazy">
+        <figcaption><h3>Dories &amp; Carved Fishermen</h3><p>Folk carvings and full-size dories, right off the beach.</p></figcaption>
+      </figure>
+      <figure class="craft reveal">
+        <img src="images/model-boat.jpg" alt="Handmade model fishing boat" loading="lazy">
+        <figcaption><h3>Model Boats</h3><p>Longliners and trawlers, detailed by hand.</p></figcaption>
+      </figure>
+      <figure class="craft reveal">
+        <img src="images/lighthouse-carving.jpg" alt="Handmade lighthouse with carved figures" loading="lazy">
+        <figcaption><h3>Lighthouses</h3><p>Garden-sized beacons with real character.</p></figcaption>
+      </figure>
+      <figure class="craft reveal">
+        <img src="images/fishing-stage-model.jpg" alt="Miniature fishing stage built onto a rock" loading="lazy">
+        <figcaption><h3>Outport Miniatures</h3><p>Stages, stores and saltboxes in miniature.</p></figcaption>
+      </figure>
+      <figure class="craft reveal">
+        <img src="images/storefront-lighthouse.jpg" alt="Crafts displayed outside the shop" loading="lazy">
+        <figcaption><h3>Gifts &amp; Keepsakes</h3><p>Your one-stop Newfoundland gift shop.</p></figcaption>
+      </figure>
+    </div>
+    <div class="promise">
+      <div class="reveal"><b>Truly local</b><p>100% handmade Newfoundland products made by local Newfoundlanders. No imports dressed up as souvenirs.</p></div>
+      <div class="reveal"><b>The biggest selection</b><p>Five decades of maker relationships means more under one roof than anywhere else in the park.</p></div>
+      <div class="reveal"><b>The best prices</b><p>Not only the best selection of quality, unique items, but fair prices to match.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUNSET BAND -->
+<section class="band">
+  <div class="band-bg" data-parallax></div>
+  <div class="wrap reveal">
+    <h2>Take home a piece of <em>the Rock.</em></h2>
+    <p>Look for the flags and banners on Main Street, Rocky Harbour.</p>
+  </div>
+</section>
+
+<!-- COTTAGE -->
+<section id="cottage">
+  <div class="wrap cottage-grid">
+    <div class="mosaic reveal">
+      <img class="m1" src="images/cottage-dory.jpg" alt="The Oceanside Cottage with a dory out front" loading="lazy">
+      <img class="m2" src="images/cottage-living.jpg" alt="Cottage sitting room and kitchen" loading="lazy">
+      <img class="m3" src="images/beach-bonfire.jpg" alt="Bonfire on the beach near the cottage" loading="lazy">
+      <img class="m4" src="images/cottage-bedroom.jpg" alt="Queen bedroom" loading="lazy">
+      <img class="m5" src="images/cottage-balcony.jpg" alt="Raised balcony" loading="lazy">
+    </div>
+    <div class="cottage-text reveal">
+      <span class="eyebrow">Stay With Us</span>
+      <h2>The Oceanside <em>Cottage</em></h2>
+      <div class="price-tag"><i></i>Private oceanfront · Rocky Harbour</div>
+      <p>Very private and nestled in the trees on the oceanfront. French doors open onto a raised balcony with ocean views, and a short trail leads down to a quiet beach where you can relax, beachcomb and watch those famous sunsets.</p>
+      <ul class="amenities">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Furnished bedroom, queen bed</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Full kitchen, ready for a good scoff</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Smart TV &amp; WiFi</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Private bath &amp; shower</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Balcony with BBQ</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Private yard &amp; firepit</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Trail to a quiet beach</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Minutes from park trailheads</li>
+      </ul>
+      <div class="hero-ctas" style="margin-top:0">
+        <a href="tel:+17092905142" class="btn btn-red">Check Availability</a>
+        <a href="#gallery" class="btn btn-dark">See More Photos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery">
+  <div class="wrap g-head">
+    <div class="section-head reveal">
+      <span class="eyebrow">Gallery</span>
+      <h2>Life around <em>Rocky Harbour.</em></h2>
+    </div>
+    <div class="g-arrows">
+      <button aria-label="Previous photos" data-dir="-1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <button aria-label="Next photos" data-dir="1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <div class="g-rail">
+    <figure class="l"><img src="images/lighthouse-sunset.jpg" alt="Lighthouse at sunset" loading="lazy"><figcaption>Lighthouse at dusk</figcaption></figure>
+    <figure class="p"><img src="images/beach-fire.jpg" alt="Beach fire" loading="lazy"><figcaption>Beach fires</figcaption></figure>
+    <figure class="l"><img src="images/bonne-bay.jpg" alt="Bonne Bay view" loading="lazy"><figcaption>Bonne Bay</figcaption></figure>
+    <figure class="p"><img src="images/shop-friends.jpg" alt="Friends in the shop" loading="lazy"><figcaption>Friends of the shop</figcaption></figure>
+    <figure class="l"><img src="images/harbour-ship.jpg" alt="Tall ship in the harbour" loading="lazy"><figcaption>Tall ship in the harbour</figcaption></figure>
+    <figure class="p"><img src="images/pitcher-plant.jpg" alt="Pitcher plant, Newfoundland's provincial flower" loading="lazy"><figcaption>Pitcher plant</figcaption></figure>
+    <figure class="l"><img src="images/sign-flags.jpg" alt="Shop sign and flags on Main Street" loading="lazy"><figcaption>Flags on Main St.</figcaption></figure>
+    <figure class="l"><img src="images/root-cellar.jpg" alt="Traditional root cellar" loading="lazy"><figcaption>Root cellar</figcaption></figure>
+    <figure class="l"><img src="images/cottage-firepit.jpg" alt="Cottage firepit" loading="lazy"><figcaption>Cottage firepit</figcaption></figure>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Loved by Visitors</span>
+      <h2>A must-stop in <em>Gros Morne.</em></h2>
+    </div>
+    <div class="review-card reveal">
+      <div class="stars" aria-label="5 stars">★★★★★</div>
+      <p>[Featured TripAdvisor review goes here. We'll pull your best recent review.]</p>
+      <div class="who">Guest name · Hometown</div>
+      <a href="https://www.tripadvisor.ca/Attraction_Review-g499205-d8373259-Reviews-Gros_Morne_Crafts_and_Souvenirs-Rocky_Harbour_Gros_Morne_National_Park_Newfoundla.html" target="_blank" rel="noopener" class="btn btn-red">Read Our Reviews on TripAdvisor</a>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="visit">
+  <div class="visit-grid">
+    <div class="visit-info reveal">
+      <span class="eyebrow">Plan a Visit</span>
+      <h2>Better yet, see us <em>in person.</em></h2>
+      <p>Look for our logo and all the flags and banners on Main Street. We love our customers, so drop by any time during business hours.</p>
+      <div class="info-row">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-7-11a7 7 0 0114 0c0 6.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><h3>Address</h3><a href="https://maps.google.com/?q=111+Main+St+North+Rocky+Harbour+NL" target="_blank" rel="noopener">111 Main St. North, Rocky Harbour<br>Newfoundland A0K 4N0</a></div>
+      </div>
+      <div class="info-row">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg>
+        <div><h3>Phone</h3><a href="tel:+17092905142">(709) 290-5142</a></div>
+      </div>
+      <div class="info-row">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><h3>Summer Hours</h3><div class="hours"><span>Mon – Sat</span><span>10am – 8pm</span><span>Sunday</span><span>Closed</span></div></div>
+      </div>
+      <div class="hero-ctas">
+        <a href="https://maps.google.com/?q=111+Main+St+North+Rocky+Harbour+NL" target="_blank" rel="noopener" class="btn btn-red">Get Directions</a>
+        <a href="tel:+17092905142" class="btn btn-ghost">Call the Shop</a>
+      </div>
+    </div>
+    <div class="visit-media">
+      <img src="images/storefront-lighthouse.jpg" alt="The shop on Main Street" loading="lazy">
+      <div class="map-card"><iframe title="Map to Gros Morne Crafts" loading="lazy" src="https://maps.google.com/maps?q=111%20Main%20St%20North%2C%20Rocky%20Harbour%2C%20NL&z=14&output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="brand"><img src="images/logo.jpg" alt="Gros Morne Crafts"></a>
+        <p style="font-size:.92rem;max-width:320px">Quality handmade Newfoundland products, made by local Newfoundlanders, in the heart of Gros Morne National Park.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#story">Our Story</a></li><li><a href="#crafts">The Crafts</a></li><li><a href="#cottage">Oceanside Cottage</a></li><li><a href="#gallery">Gallery</a></li></ul></div>
+      <div><h4>Visit</h4><ul><li>111 Main St. North</li><li>Rocky Harbour, NL A0K 4N0</li><li><a href="tel:+17092905142">(709) 290-5142</a></li><li>Mon–Sat 10am–8pm (summer)</li></ul></div>
+      <div><h4>Follow</h4><ul><li><a href="https://www.facebook.com/p/Gros-Morne-Crafts-100057645751956/" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.tripadvisor.ca/Attraction_Review-g499205-d8373259-Reviews-Gros_Morne_Crafts_and_Souvenirs-Rocky_Harbour_Gros_Morne_National_Park_Newfoundla.html" target="_blank" rel="noopener">TripAdvisor</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Gros Morne Crafts. All rights reserved.</span>
+      <span>Proudly Newfoundland made.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+17092905142" class="btn btn-red">Call</a>
+  <a href="https://maps.google.com/?q=111+Main+St+North+Rocky+Harbour+NL" target="_blank" rel="noopener" class="btn btn-dark">Directions</a>
+</div>
+
+<script>
+  const header=document.querySelector('header');
+  const band=document.querySelector('[data-parallax]');
+  const onScroll=()=>{
+    header.classList.toggle('scrolled',scrollY>40);
+    if(band){const r=band.parentElement.getBoundingClientRect();band.style.transform=`translateY(${(r.top+r.height/2-innerHeight/2)*-0.15}px)`}
+  };
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  const toggle=document.querySelector('.menu-toggle'),links=document.querySelector('.nav-links');
+  toggle.addEventListener('click',()=>{const o=links.classList.toggle('open');toggle.setAttribute('aria-expanded',o);header.classList.add('scrolled')});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded',false)}));
+
+  const rail=document.querySelector('.g-rail');
+  document.querySelectorAll('.g-arrows button').forEach(b=>b.addEventListener('click',()=>rail.scrollBy({left:b.dataset.dir*rail.clientWidth*.7,behavior:'smooth'})));
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
